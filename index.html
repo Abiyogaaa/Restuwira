@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Restu Wiraatmaja - Horror Writer</title>
+  <title>Restu Wiraatmadja - Horror Writer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -73,7 +73,7 @@
     /* Typewriter effect */
     .typewriter {
       overflow: hidden;
-      border-right: .15em solid #7a0000;
+      border-right: .15em solid #faf8f8;
       white-space: nowrap;
       margin: 0 auto;
       animation: 
@@ -108,29 +108,48 @@
     class="relative max-w-7xl w-full mx-auto rounded-3xl border border-[#2f3bff33] overflow-hidden"
     style="background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(10px); z-index: 10;"
   >
-    <!-- Header navigation -->
-    <header class="flex items-center justify-between px-8 py-6">
-      <!-- Left logo/signature -->
-      <div class="text-[#7a0000] font-marker text-xl">RW</div>
-      
-      <!-- Center navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Books</a>
-        <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Short Stories</a>
-        <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">About</a>
-        <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Contact</a>
-      </nav>
-      
-      <!-- Right user and menu icons -->
-      <div class="flex items-center space-x-6">
-        <!-- <button aria-label="Newsletter signup" class="text-white">
-          <i class="fas fa-envelope"></i>
-        </button>
-        <button aria-label="Menu" class="text-white">
-          <i class="fas fa-bars"></i>
-        </button> -->
-      </div>
-    </header>
+   
+<!-- Header wrapper -->
+<header class="w-full px-10 py-10 flex items-center justify-between relative">
+
+  <!-- Logo kiri -->
+  <div class="text-[#7a0000] font-marker text-xl z-10">RW</div>
+
+  <!-- Navbar desktop: tampil di tengah saat md ke atas -->
+  <nav class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center space-x-8">
+    <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Books</a>
+    <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Short Stories</a>
+    <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">About</a>
+    <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Contact</a>
+  </nav>
+
+  <!-- Hamburger kanan (tampil hanya di mobile) -->
+  <button id="mobile-menu-toggle" aria-label="Menu" class="text-white text-3xl md:hidden z-10">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<!-- Menu Mobile (dropdown ke bawah) -->
+<div id="mobile-menu" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out flex flex-col items-center space-y-4 mt-0 md:hidden">
+  <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Books</a>
+  <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Short Stories</a>
+  <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">About</a>
+  <a href="#" class="text-white text-sm hover:text-[#7a0000] transition">Contact</a>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('max-h-0');
+    mobileMenu.classList.toggle('max-h-96');
+  });
+</script>
+
+
+
+    <!-- </header> -->
 
     <!-- Main content -->
     <div class="flex flex-col md:flex-row min-h-[600px]">
@@ -145,12 +164,12 @@
       
       <!-- Left text -->
       <div class="flex flex-col justify-end px-8 py-8 md:w-1/4 relative z-50">
-        <div class="text-stroke text-3xl sm:text-4xl md:text-5xl mb-2">horror writer</div>
+        <div class="text-stroke text-3xl sm:text-4xl md:text-5xl mb-2">HORROR WRITER</div>
         <br>
         <div class="font-marker text-4xl sm:text-5xl md:text-6xl leading-none mb-4">
-            <span class="text-[#7a0000]">RESTU</span><span class="text-white"> WIRAATMAJA</span>
+            <span class="text-[#7a0000]">RESTU</span><span class="text-white"> WIRAATMADJA</span>
         </div>
-        <p id="horror-caption" class="text-gray-400 text-base sm:text-sm md:text-base max-w-xs sm:max-w-full typewriter whitespace-nowrap overflow-hidden border-r-2 border-red-800"></p>
+        <p id="horror-caption" class="text-[#7a0000] font-bold text-base sm:text-sm md:text-base max-w-xs sm:max-w-full typewriter whitespace-nowrap overflow-hidden border-r-2 border-red-800"></p>
 
 <script>
   const captions = [
@@ -191,7 +210,7 @@
       <div class="flex-1 flex justify-center items-center relative mb-20">
         <img
   src="foto.jpg"
-  alt="Dark atmospheric portrait representing Restu Wiraatmaja's horror aesthetic"
+  alt="Dark atmospheric portrait representing Restu Wiraatmadja's horror aesthetic"
   class="max-h-[400px] w-[320px] object-contain border-[6px] border-[#4b0000] shadow-[0_0_25px_#7a0000]"
 
 />
@@ -351,7 +370,7 @@
     </div>
     
     <!-- Author quote and signature -->
-    <div class="absolute bottom-6 right-6 text-[#7a0000] text-xs tracking-widest font-marker">RESTU WIRAATMAJA</div>
+    <div class="absolute bottom-6 right-6 text-[#7a0000] text-xs tracking-widest font-marker">RESTU WIRAATMADJA</div>
   </main>
 </body>
 </html>
